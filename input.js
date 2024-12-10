@@ -1,4 +1,4 @@
-import { useDebugValue } from "react";
+import { useCallback, useDebugValue } from "react";
 
 function useFoo() {
   return () => "foo";
@@ -7,4 +7,8 @@ function useFoo() {
 function useBar() {
   useDebugValue("bar");
   return () => "bar";
+}
+
+function useBaz() {
+  return useCallback(() => "baz", []);
 }
